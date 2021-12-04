@@ -31,14 +31,20 @@ const Routes = (props) => {
   
   return (
     <>
+      {errorMessage !== "" && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded" role="alert">
+          <strong className="font-bold">Error! </strong>
+          <span className="block sm:inline">{errorMessage}</span>
+        </div>
+      )}     
       <Switch>
         <Route path="/login" component={Login} />
         <Route
           exact
           path="/"
-          render={(routerProps) => (props.user && props.user.id ? <Home user={props.user} /> : <Login />)}
+          render={(routerProps) => (props.user && props.user.id ? <Home /> : <Login />)}
         />
-        <Route path="/home" render={(routerProps) => (<Home user={props.user} />)} />
+        <Route path="/home" component={Home} />
       </Switch>
     </>
   );

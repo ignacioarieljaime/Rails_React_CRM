@@ -3,6 +3,8 @@ import loggerMiddleware from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 
 import user from "./user";
+import prospects from "./prospects";
+import companies from "./companies"
 
 const CLEAR_ON_LOGOUT = "CLEAR_ON_LOGOUT";
 
@@ -14,6 +16,8 @@ export const clearOnLogout = () => {
 
 const appReducer = combineReducers({
   user,
+  prospects,
+  companies,
 });
 
 const rootReducer = (state, action) => {
