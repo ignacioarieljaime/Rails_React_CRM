@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { fetchProspects, fetchCompanies } from "../store/utils/thunkCreators";
 
 import { Prospects, NewProspectForm } from "./Prospects"
+import CloseButton from "./CloseButton";
+
+const prospects = state => state.prospects;
+const companies = state => state.companies;
 
 const Home = (props) => {
-  const { user, fetchProspects, fetchCompanies, prospects } = props;
+  const prospectsList = useSelector(prospects);
+  const companiesList = useSelector(companies);
+
+  const { fetchProspects, fetchCompanies, user } = props;
   const [showProspectForm, setShowProspectForm] = useState(false);
   
   useEffect(() => {
@@ -33,17 +40,6 @@ const Home = (props) => {
     );
   };
 
-  const CloseButton = (props) => {
-    return (
-      <button onClick={props.onClick} className="bg-gray-500 hover:bg-gray-700 text-white py-1 px-1 rounded-lg focus:outline-none focus:shadow-outline">
-        <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-          <path fillRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
-        </svg>
-      </button>
-    );
-  };
- 
- 
   return (
     <div className="h-screen sm:flex p-6">
       <div className="flex justify-center items-center sm:w-1/2 text-center p-6 border-dashed sm:border-solid border-b-2 sm:border-b-0 sm:border-r-2 border-gray-400">
@@ -58,8 +54,8 @@ const Home = (props) => {
           {showProspectForm && <CloseButton onClick={toggleProspectForm}  />}
           <Button name="New Company" />
         </div>
-        { showProspectForm && <NewProspectForm /> }
-        <Prospects prospects={prospects} />
+        { showProspectForm && <NewProspectForm companies={companiesList} /> }
+        <Prospects companies={companiesList} prospects={prospectsList} />
       </div>
     </div>
   );
@@ -68,9 +64,9 @@ const Home = (props) => {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    prospects: state.prospects,
-  };
-};
+  }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
