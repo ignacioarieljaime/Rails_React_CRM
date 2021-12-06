@@ -1,20 +1,29 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
+import { EditProspectForm } from "./";
+ 
 const Prospect = (props) => {
-  const { prospect } = props;
+  const { prospect, companies } = props;
   const [displayProspectInfo, setDisplayProspectInfo] = useState(false);
+  const [showEditProspectForm, setShowEditProspectForm] = useState(false);
+
+  const toggleEditProspectForm = () => {
+    setShowEditProspectForm(!showEditProspectForm);
+  };
 
   const toggleInfo = () => {
     setDisplayProspectInfo(!displayProspectInfo);
-  }
+  };
 
   return (
+    <>
+     {showEditProspectForm && <EditProspectForm prospect={prospect} companies={companies} toggleEditProspectForm={toggleEditProspectForm} />}
     <div className="p-3 mb-3 border border-gray-300 rounded-md">
       <div className="flex justify-between ">
-        <h2 className="font-bold text-lg">{`${prospect.first_name} ${prospect.last_name}`}</h2>
+        <button onClick={toggleEditProspectForm} className="hover:bg-gray-300 font-bold mb-2 py-2 px-5 rounded focus:outline-none focus:shadow-outline">{`${prospect.first_name} ${prospect.last_name}` }</button>
         <button onClick={toggleInfo}><i className={`${displayProspectInfo ? "fa fa-minus" : "fa fa-plus"}`}></i></button>
       </div>
-      <h5 className="text-sm mb-3">Current Stage: <span className="font-bold">{prospect.stage}</span></h5>
+      <h5 className="text-sm ml-3 mb-3">Current Stage: <span className="font-bold">{prospect.stage}</span></h5>
       {displayProspectInfo &&
         <ul className="text-sm">
           <li key={`${prospect.id}-email`}><span className="font-bold">Email:</span> {prospect.email}</li>
@@ -24,6 +33,7 @@ const Prospect = (props) => {
         </ul>
       }
     </div>
+    </>
   )
 };
 
