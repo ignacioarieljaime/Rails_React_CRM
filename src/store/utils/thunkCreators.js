@@ -63,6 +63,37 @@ export const fetchProspects = () => async (dispatch) => {
   }
 };
 
+export const postProspect = (body) => async (dispatch) => {
+  try {
+    const { data } = await axios.post("http://localhost:3000/api/prospects", body);
+    console.log(data);
+    dispatch(addProspect(data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const editProspect = (body, id) => async (dispatch) => {
+  try {
+    const { data } = await axios.put(`http://localhost:3000/api/prospects/${id}`, body);
+    console.log(data);
+    dispatch(updateProspect(data));
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const destroyProspect = (id) => async (dispatch) => {
+  try {
+    const { data } = await axios.delete(`http://localhost:3000/api/prospects/${id}`);
+    console.log(data);
+    dispatch(deleteProspect(id))
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
 // COMPANIES THUNK CREATORS
 export const fetchCompanies = () => async (dispatch) => {
   try {
