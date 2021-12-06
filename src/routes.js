@@ -22,6 +22,8 @@ const Routes = (props) => {
       } else {
         setErrorMessage("Internal Server Error. Please try again");
       }
+    } else {
+      setErrorMessage("");
     }
   }, [user.error])
 

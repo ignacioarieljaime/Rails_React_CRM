@@ -1,7 +1,7 @@
 // PROSPECTS
 
 export const addProspectToStore = (state, prospect) => {
-  return [...state, prospect];
+  return [prospect, ...state];
 };
 
 export const updateProspectInStore = (state, prospect) => {
