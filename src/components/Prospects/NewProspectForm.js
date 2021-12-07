@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { postProspect } from '../../store/utils/thunkCreators';
 
 const NewProspectForm = (props) => {
-  const { companies, postProspect } = props;
+  const { companies, postProspect, toggleProspectForm } = props;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +17,7 @@ const NewProspectForm = (props) => {
     
     await postProspect({prospect: {first_name, last_name, email, phone, company_name, company_id}});
     e.target.reset();
+    toggleProspectForm();
   }
 
     return (
