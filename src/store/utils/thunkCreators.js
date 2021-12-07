@@ -31,7 +31,7 @@ export const login = (credentials) => async (dispatch) => {
     
     dispatch(gotUser(data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
     dispatch(gotUser({ error: error.response.data.error || "Server Error" }));
   }
 };
@@ -66,7 +66,6 @@ export const fetchProspects = () => async (dispatch) => {
 export const postProspect = (body) => async (dispatch) => {
   try {
     const { data } = await axios.post("http://localhost:3000/api/prospects", body);
-    console.log(data);
     dispatch(addProspect(data));
   } catch (error) {
     console.error(error);
@@ -76,7 +75,6 @@ export const postProspect = (body) => async (dispatch) => {
 export const editProspect = (body, id) => async (dispatch) => {
   try {
     const { data } = await axios.put(`http://localhost:3000/api/prospects/${id}`, body);
-    console.log(data);
     dispatch(updateProspect(data));
   } catch (error) {
     console.error(error)
@@ -86,7 +84,6 @@ export const editProspect = (body, id) => async (dispatch) => {
 export const destroyProspect = (id) => async (dispatch) => {
   try {
     const { data } = await axios.delete(`http://localhost:3000/api/prospects/${id}`);
-    console.log(data);
     dispatch(deleteProspect(id))
   } catch (error) {
     console.error(error);
@@ -103,4 +100,33 @@ export const fetchCompanies = () => async (dispatch) => {
     console.error(error);
   }
 };
+
+export const postCompany = (body) => async (dispatch) => {
+  try {
+    const { data } = await axios.post("http://localhost:3000/api/companies", body);
+    console.log(data);
+    dispatch(addCompany(data));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const editCompany = (body, id) => async (dispatch) => {
+  try {
+    const { data } = await axios.put(`http://localhost:3000/api/companies/${id}`, body);
+    dispatch(updateCompany(data));
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const destroyCompany = (id) => async (dispatch) => {
+  try {
+    const { data } = await axios.delete(`http://localhost:3000/api/companies/${id}`);
+    console.log(data);
+    dispatch(deleteCompany(id));
+  } catch (error) {
+    console.error(error);
+  }
+}
 
