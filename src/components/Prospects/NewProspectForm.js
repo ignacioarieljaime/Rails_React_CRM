@@ -83,6 +83,11 @@ const NewProspectForm = (props) => {
     );
   };
 
+const mapStateToProps = (state) => {
+  return {
+    companies: state.companies
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -93,4 +98,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null, mapDispatchToProps)(NewProspectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProspectForm);
