@@ -4,18 +4,18 @@ import { connect, useSelector } from "react-redux";
 import { fetchProspects, fetchCompanies } from "../store/utils/thunkCreators";
 
 import { Prospects, NewProspectForm } from "./Prospects"
+import CompanyForm from "./Companies/CompanyForm";
 import CloseButton from "./CloseButton";
 
-const prospects = state => state.prospects;
 const companies = state => state.companies;
 
 const Home = (props) => {
-  const prospectsList = useSelector(prospects);
   const companiesList = useSelector(companies);
-
   const { fetchProspects, fetchCompanies, user } = props;
   const [showProspectForm, setShowProspectForm] = useState(false);
-  
+  const [showCompanyForm, setShowCompanyForm] = useState(false);
+
+    
   useEffect(() => {
     fetchProspects();
   }, [fetchProspects]);
@@ -30,6 +30,10 @@ const Home = (props) => {
 
   const toggleProspectForm = () => {
     setShowProspectForm(!showProspectForm);
+  }
+
+  const toggleCompanyForm = () => {
+    setShowCompanyForm(!showCompanyForm);
   }
 
   const Button = (props) => {
@@ -52,10 +56,12 @@ const Home = (props) => {
         <div className="flex items-center justify-between sm:ml-3 mt-6 sm:mt-0 mb-4 sm:mb-12 p-3">
           {!showProspectForm && <Button onClick={toggleProspectForm} name="New Prospect" />}
           {showProspectForm && <CloseButton onClick={toggleProspectForm}  />}
-          <Button name="New Company" />
+          {!showCompanyForm && <Button onClick={toggleCompanyForm} name="New Company" />}
+          {showCompanyForm && <CloseButton onClick={toggleCompanyForm}/>}
         </div>
-        { showProspectForm && <NewProspectForm companies={companiesList} /> }
-        <Prospects companies={companiesList} prospects={prospectsList} />
+        { showProspectForm && <NewProspectForm toggleProspectForm={toggleProspectForm} companies={companiesList} /> }
+        { showCompanyForm && <CompanyForm />}
+        <Prospects />
       </div>
     </div>
   );
