@@ -6,7 +6,7 @@ import CompanyForm from "../Companies/CompanyForm";
 const Prospect = (props) => {
   const { prospect } = props;
   const [compName, setCompName] = useState(prospect.company && prospect.company.name || "");
-  const [prospectCompany, setProspectCompany] = useState(prospect.company);
+  const [prospectCompanyId, setProspectCompanyId] = useState(prospect.company && prospect.company.id);
   const [displayProspectInfo, setDisplayProspectInfo] = useState(false);
   const [showEditProspectForm, setShowEditProspectForm] = useState(false);
   const [showCompanyForm, setShowCompanyForm] = useState(false);
@@ -28,7 +28,7 @@ const Prospect = (props) => {
   }
 
   const editProspectCompany = () => {
-    setProspectCompany(null);
+    setProspectCompanyId(null);
   }
 
   const capitalize = (str) => {
@@ -54,7 +54,7 @@ const Prospect = (props) => {
         <ul className="text-sm">
           <li className="px-2" key={`${prospect.id}-email`}><span className="font-bold">Email:</span> {prospect.email}</li>
           <li className="px-2" key={`${prospect.id}-phone`}><span className="font-bold">Phone:</span> {prospect.phone && prospect.phone}</li>
-          {prospectCompany && <li onClick={toggleCompanyForm} className="hover:bg-gray-300 cursor-pointer px-2 rounded" key={`${prospect.id}-company`}><span className="font-bold">Company:</span> {capitalize(compName)}</li>}
+          {prospectCompanyId && <li onClick={toggleCompanyForm} className="hover:bg-gray-300 cursor-pointer px-2 rounded" key={`${prospect.id}-company`}><span className="font-bold">Company:</span> {capitalize(compName)}</li>}
           <li className="px-2" key={`${prospect.id}-probability`}><span className="font-bold">Probability:</span> {prospect.probability && prospect.probability}</li>
         </ul>
       }
