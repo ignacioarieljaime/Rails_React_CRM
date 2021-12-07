@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect} from "react-redux";
 
 import { editProspect, destroyProspect } from '../../store/utils/thunkCreators';
 import CloseButton from "../CloseButton";
 import DeleteButton from "../DeleteButton";
 
-const companies = state => state.companies;
 
 const EditProspectForm = (props) => {
-  const companiesList = useSelector(companies);
-  const { editProspect, destroyProspect, prospect, toggleEditProspectForm } = props;
+  const { editProspect, destroyProspect, prospect, companies, toggleEditProspectForm } = props;
 
   const [firstName, setFirstName] = useState(prospect.first_name);
   const [lastName, setLastName] = useState(prospect.last_name);
@@ -151,7 +149,7 @@ const EditProspectForm = (props) => {
                 onChange={e => setStage(e.target.value)} 
               >
                 <option value="">Select</option>
-                {companiesList.map((company, idx) => {
+                {companies.map((company, idx) => {
                   return <option value={company.id} key={company.id}>{company.name}</option>
                 })}
               </select>
@@ -174,6 +172,11 @@ const EditProspectForm = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    companies: state.companies
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -187,4 +190,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(null, mapDispatchToProps)(EditProspectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProspectForm);
