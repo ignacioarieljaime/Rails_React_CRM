@@ -47,7 +47,7 @@ const CompanyForm = (props) => {
           {company ? "Edit" : "Submit"}
         </button>
       </div>
-      <DeleteButton buttonName="Delete Company" onClick={handleDeleteCompany} />
+      {company && <DeleteButton buttonName="Delete Company" onClick={handleDeleteCompany} />}
     </form>
   );
 };

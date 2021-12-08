@@ -17,6 +17,7 @@ const Prospect = (props) => {
 
   const toggleInfo = () => {
     setDisplayProspectInfo(!displayProspectInfo);
+    setShowCompanyForm(false);
   };
 
   const toggleCompanyForm = () => {
