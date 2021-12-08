@@ -19,7 +19,7 @@ const Prospects = (props) => {
       <div className="p-1 mb-3 border border-gray-300 rounded-md">
         <input 
           className="appearance-none  border-none w-full text-gray-700 mr-3 p-2 leading-tight focus:outline-none" 
-          placeholder="Search By prospect's firstname, lastname or stage"
+          placeholder="Search by firstname, lastname or stage"
           value={searchString} 
           onChange={e => setSearchString(e.target.value)} 
         />

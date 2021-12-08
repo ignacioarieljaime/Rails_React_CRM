@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { connect} from "react-redux";
+import { connect } from "react-redux";
 
 import { editProspect, destroyProspect } from '../../store/utils/thunkCreators';
-import CloseButton from "../CloseButton";
-import DeleteButton from "../DeleteButton";
+import { CloseButton } from "..";
+import { DeleteButton } from "..";
 
 
 const EditProspectForm = (props) => {

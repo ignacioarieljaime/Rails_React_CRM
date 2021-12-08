@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import { postCompany, editCompany, destroyCompany } from "../../store/utils/thunkCreators";
-import DeleteButton from "../DeleteButton";
+import { DeleteButton } from "..";
 
 const CompanyForm = (props) => {
-  const { company, toggleCompanyForm, editCompanyName, postCompany, editCompany, destroyCompany, editProspectCompany } = props;
+  const { company, toggleCompanyForm, editCompanyName, postCompany, editCompany, destroyCompany } = props;
   const [companyName, setCompanyName] = useState("");
 
   const handlePostCompany = async (e) => {
@@ -29,7 +29,6 @@ const CompanyForm = (props) => {
     e.preventDefault();
     await destroyCompany(company.id);
     toggleCompanyForm();
-    editProspectCompany();
   }
 
   return (
