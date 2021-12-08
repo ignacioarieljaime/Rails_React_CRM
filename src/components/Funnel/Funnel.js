@@ -22,7 +22,8 @@ const Funnel = (props) => {
   const rejected = rejectedCount(prospects);
 
   return (
-    <>
+    <> 
+      <h1 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-10">VC Labs Sales Funnel</h1>
       <div onClick={() => setShowLeadCount(!showLeadCount)} id="lead" className="flex justify-center items-center cursor-pointer h-12 sm:h-16 bg-blue-600 hover:bg-blue-700 w-4/5 mb-2 sm:mb-5 rounded-xl">
         {!showLeadCount && <p className="text-center text-xl font-bold">LEAD</p>}
         {showLeadCount && <p className="text-center text-xl font-bold">{lead} {`(${(lead*100/prospects.length).toFixed(2)}%)`}</p>}

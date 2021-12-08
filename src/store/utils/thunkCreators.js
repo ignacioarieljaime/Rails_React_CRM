@@ -83,7 +83,7 @@ export const editProspect = (body, id) => async (dispatch) => {
 
 export const destroyProspect = (id) => async (dispatch) => {
   try {
-    const { data } = await axios.delete(`http://localhost:3000/api/prospects/${id}`);
+    await axios.delete(`http://localhost:3000/api/prospects/${id}`);
     dispatch(deleteProspect(id))
   } catch (error) {
     console.error(error);
@@ -122,8 +122,7 @@ export const editCompany = (body, id) => async (dispatch) => {
 
 export const destroyCompany = (id) => async (dispatch) => {
   try {
-    const { data } = await axios.delete(`http://localhost:3000/api/companies/${id}`);
-    console.log(data);
+    await axios.delete(`http://localhost:3000/api/companies/${id}`);
     dispatch(deleteCompany(id));
   } catch (error) {
     console.error(error);

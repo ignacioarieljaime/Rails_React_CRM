@@ -5,6 +5,7 @@ import { fetchUser } from "./store/utils/thunkCreators";
 
 import Login from './Login';
 import { Home } from './components';
+import { Companies } from "./components/Companies";
 
 const Routes = (props) => {
   const { user, fetchUser } = props;
@@ -47,6 +48,7 @@ const Routes = (props) => {
           render={(routerProps) => (props.user && props.user.id ? <Home /> : <Login />)}
         />
         <Route path="/home" component={Home} />
+        <Route path="/companies" component={Companies} />
       </Switch>
     </>
   );

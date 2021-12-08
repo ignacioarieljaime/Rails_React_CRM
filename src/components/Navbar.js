@@ -36,6 +36,7 @@ const Navbar = (props) => {
       <div className={`px-3 pt-2 pb-4 sm:flex sm:items-center ${isOpen ? "block": "hidden"}`}>
         {!user.id && <Link to="/login" className="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800">Login</Link>}
         {user.id && <Link to="/home" className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-3">Home</Link>}
+        {user.id && <Link to="/companies" className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-3">Companies</Link>}
         {user.id && <button onClick={handleLogout} className="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-3">Logout</button>}
       </div>
     </header>
