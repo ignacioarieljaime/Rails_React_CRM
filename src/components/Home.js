@@ -42,7 +42,7 @@ const Home = (props) => {
   };
 
   return (
-    <div className="h-screen sm:flex p-6">
+    <div className="h-screen sm:flex px-6 py-3">
       <div className="flex flex-col justify-center items-center sm:w-1/2 p-6 sm:pt-0 border-dashed sm:border-solid border-b-2 sm:border-b-0 sm:border-r-2 border-gray-400">
         <Funnel />
       </div>
