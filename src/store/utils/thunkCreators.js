@@ -1,20 +1,23 @@
 import axios from "axios";
-
+import CONSTANT from "./constant";
 import { gotUser, setFetchingStatus } from "../user";
 import { getProspects, addProspect, updateProspect, deleteProspect } from "../prospects";
 import { getCompanies, addCompany, updateCompany, deleteCompany } from "../companies";
 
+const { API: { BASE } } = CONSTANT;
+
+axios.interceptors.request.use(function (config) {
+  const token = localStorage.getItem("vc-crm-token");
+  config.headers.Authorization = `Bearer ${token}`;
+
+  return config;
+});
 
 // USER THUNK CREATORS
 export const fetchUser = () => async (dispatch) => {
-  const token = localStorage.getItem("vc-crm-token");
   dispatch(setFetchingStatus(true));
   try {
-    const { data } = await axios.get("http://localhost:3000/api/login", {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    const { data } = await axios.get(`${BASE}/login`);
     dispatch(gotUser(data));
   } catch (error) {
     console.error(error);
@@ -25,7 +28,7 @@ export const fetchUser = () => async (dispatch) => {
 
 export const login = (credentials) => async (dispatch) => {
   try {
-    const { data } = await axios.post("http://localhost:3000/api/login", credentials);
+    const { data } = await axios.post(`${BASE}/login`, credentials);
     localStorage.setItem("vc-crm-token", data.token);
     localStorage.setItem("token-id", data.id);
     
@@ -37,14 +40,9 @@ export const login = (credentials) => async (dispatch) => {
 };
 
 export const logout = (id) => async (dispatch) => {
-  const token = localStorage.getItem("vc-crm-token");
   const tokenId = localStorage.getItem("token-id");
   try {
-    await axios.delete(`http://localhost:3000/api/login/${tokenId}`,{
-      headers: {
-				'Authorization': `Bearer ${token}`
-      }
-    });
+    await axios.delete(`${BASE}/login/${tokenId}`);
     localStorage.removeItem("vc-crm-token");
     localStorage.removeItem("token-id");
     dispatch(gotUser({}));
@@ -56,7 +54,7 @@ export const logout = (id) => async (dispatch) => {
 // PROSPECTS THUNK CREATORS
 export const fetchProspects = () => async (dispatch) => {
   try {
-    const { data } = await axios.get("http://localhost:3000/api/prospects");
+    const { data } = await axios.get(`${BASE}/prospects`);
     dispatch(getProspects(data));
   } catch (error) {
     console.error(error);
@@ -65,7 +63,7 @@ export const fetchProspects = () => async (dispatch) => {
 
 export const postProspect = (body) => async (dispatch) => {
   try {
-    const { data } = await axios.post("http://localhost:3000/api/prospects", body);
+    const { data } = await axios.post(`${BASE}/prospects`, body);
     dispatch(addProspect(data));
   } catch (error) {
     console.error(error);
@@ -74,7 +72,7 @@ export const postProspect = (body) => async (dispatch) => {
 
 export const editProspect = (body, id) => async (dispatch) => {
   try {
-    const { data } = await axios.put(`http://localhost:3000/api/prospects/${id}`, body);
+    const { data } = await axios.put(`${BASE}/prospects/${id}`, body);
     dispatch(updateProspect(data));
   } catch (error) {
     console.error(error)
@@ -83,7 +81,7 @@ export const editProspect = (body, id) => async (dispatch) => {
 
 export const destroyProspect = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:3000/api/prospects/${id}`);
+    await axios.delete(`${BASE}/prospects/${id}`);
     dispatch(deleteProspect(id))
   } catch (error) {
     console.error(error);
@@ -94,7 +92,7 @@ export const destroyProspect = (id) => async (dispatch) => {
 // COMPANIES THUNK CREATORS
 export const fetchCompanies = () => async (dispatch) => {
   try {
-    const { data } = await axios.get("http://localhost:3000/api/companies");
+    const { data } = await axios.get(`${BASE}/companies`);
     dispatch(getCompanies(data));
   } catch (error) {
     console.error(error);
@@ -103,7 +101,7 @@ export const fetchCompanies = () => async (dispatch) => {
 
 export const postCompany = (body) => async (dispatch) => {
   try {
-    const { data } = await axios.post("http://localhost:3000/api/companies", body);
+    const { data } = await axios.post(`${BASE}/companies`, body);
     console.log(data);
     dispatch(addCompany(data));
   } catch (error) {
@@ -113,7 +111,7 @@ export const postCompany = (body) => async (dispatch) => {
 
 export const editCompany = (body, id) => async (dispatch) => {
   try {
-    const { data } = await axios.put(`http://localhost:3000/api/companies/${id}`, body);
+    const { data } = await axios.put(`${BASE}/companies/${id}`, body);
     dispatch(updateCompany(data));
   } catch (error) {
     console.error(error)
@@ -122,7 +120,7 @@ export const editCompany = (body, id) => async (dispatch) => {
 
 export const destroyCompany = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:3000/api/companies/${id}`);
+    await axios.delete(`${BASE}/companies/${id}`);
     dispatch(deleteCompany(id));
   } catch (error) {
     console.error(error);
