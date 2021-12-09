@@ -10,7 +10,7 @@
 
 > This is the front end. Here is the link to the back end https://github.com/iamme24cl/vc-labs-crm
 
-> Live demo hosted on heroku [_here_](). 
+> Live demo hosted on heroku [_here_](https://vc-labs-crm-sales-funnel.netlify.app/). 
 > Demo video describing the features of the application is hosted [_here_]().
 
 ## Table of Contents

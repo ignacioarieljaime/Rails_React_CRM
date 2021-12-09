@@ -29,7 +29,7 @@ const Routes = (props) => {
   }, [user.error])
 
   if (props.user.isFetching) {
-    return <div>Loading...</div>
+    return <div className="text-center mt-32">Loading...</div>
   }
   
   return (
