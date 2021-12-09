@@ -1,4 +1,4 @@
-# crm-funnel
+# crm-sales-funnel
 > This application is a CRM sales funnel.
 > ## General Information
 - Create, update and delete Prospects.
