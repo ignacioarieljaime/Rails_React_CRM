@@ -27,7 +27,7 @@ const EditProspectForm = (props) => {
         email, 
         phone, 
         company_name: companyName, 
-        company_id: e.target.companyId.value,
+        company_id: e.target.companyId ? e.target.companyId.value : "",
         stage,
       }
     }, prospect.id);
@@ -45,7 +45,7 @@ const EditProspectForm = (props) => {
       <form onSubmit={handleSubmit} className="w-full mx-auto mb-4 max-w-lg">
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="first-name">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="first-name">
               First Name
             </label>
             <input
@@ -58,7 +58,7 @@ const EditProspectForm = (props) => {
             />
           </div>
           <div className="w-full md:w-1/3 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="last-name">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="last-name">
               Last Name
             </label>
             <input 
@@ -71,7 +71,7 @@ const EditProspectForm = (props) => {
             />
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="stage">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="stage">
               Stage
             </label>
             <div className="relative">
@@ -96,7 +96,7 @@ const EditProspectForm = (props) => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
               Email
             </label>
             <input 
@@ -111,7 +111,7 @@ const EditProspectForm = (props) => {
         </div>
         <div className="flex flex-wrap -mx-3 mb-2">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="phone">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="phone">
               Phone
             </label>
             <input 
@@ -124,7 +124,7 @@ const EditProspectForm = (props) => {
             />
           </div>
           {prospect.company && <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="company-name">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="company-name">
               Update Company
             </label>
             <input 
@@ -137,7 +137,7 @@ const EditProspectForm = (props) => {
             />
           </div>}
           {!prospect.company && <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="company-id">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="company-id">
               Add Company
             </label>
             <div className="relative">
