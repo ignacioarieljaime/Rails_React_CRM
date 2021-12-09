@@ -33,16 +33,16 @@ const CompanyForm = (props) => {
 
   return (
     <form onSubmit={company ? handleEditCompany : handlePostCompany} class="w-full mx-auto mb-3 max-w-lg">
-      <div class="flex items-center border-b border-gray-400 py-2 mb-3">
+      <div className="flex items-center border-b border-gray-400 py-2 mb-3">
         <input 
-          class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
+          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" 
           type="text" 
           placeholder="Company Name" 
           id="company-name"
           value={companyName}
           onChange={e => setCompanyName(e.target.value)}
         />
-        <button class="bg-gray-500 hover:bg-gray-700 text-white text-sm py-1 px-2 rounded focus:outline-none focus:shadow-outline flex-shrink-0" type="Submit">
+        <button className="bg-gray-500 hover:bg-gray-700 text-white text-sm py-1 px-2 rounded focus:outline-none focus:shadow-outline flex-shrink-0" type="Submit">
           {company ? "Edit" : "Submit"}
         </button>
       </div>
