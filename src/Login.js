@@ -1,13 +1,14 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { login } from './store/utils/thunkCreators';
 
 const Login = (props) => {
-
   const { user, login } = props;
+  const [email, setEmail] = useState("demo@user.com");
+  const [password, setPassword] = useState("dslkfjdjfdk123#");
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -27,7 +28,7 @@ const Login = (props) => {
 
       <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" for="email">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
             Email
           </label>
           <input 
@@ -36,11 +37,12 @@ const Login = (props) => {
             name="email" 
             type="text" 
             placeholder="email" 
-            value="demo@user.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
             Password
           </label>
           <input 
@@ -49,7 +51,8 @@ const Login = (props) => {
             name="password" 
             type="password" 
             placeholder="password" 
-            value="dslkfjdjfdk123#"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
         </div>
         <div className="flex items-center justify-between">
