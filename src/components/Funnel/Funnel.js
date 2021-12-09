@@ -9,7 +9,7 @@ import {
 
 const Funnel = (props) => {
   const { prospects } = props;
-  const [showLeadCount, setShowLeadCount] = useState(true);
+  const [showLeadCount, setShowLeadCount] = useState(false);
   const [showContactedCount, setShowContactedCount] = useState(false);
   const [showDiligenceCount, setShowDiligenceCount] = useState(false);
   const [showClosedCount, setShowClosedCount] = useState(false);
