@@ -22,7 +22,7 @@ const Navbar = (props) => {
     <header className="bg-gray-900 sm:flex sm:justify-between sm:px-5">
       <div className="flex items-center justify-between px-5 py-3">
         <div>
-          <img className="h-10" src="crm.png" alt="crm-logo" />
+          <Link to="/"><img className="h-10 cursor-pointer" src="crm.png" alt="crm-logo" /></Link>
         </div>
         <div className="sm:hidden">
           <button type="button" onClick={toggleNavbar} className="text-gray-500 hover:text-white focus:text-white focus:outline-none block">
