@@ -1,5 +1,5 @@
 // COUNT FILTER
 
-export const countProspectByStage = (prospects, stage) => {
+export const countProspectsByStage = (prospects, stage) => {
   return prospects.filter(prospect => prospect.stage === stage).length;
 }

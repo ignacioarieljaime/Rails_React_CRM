@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { countProspectByStage } from "./utils/filters";
+import { countProspectsByStage } from "./utils/filters";
 
 const Funnel = (props) => {
   const { prospects } = props;
@@ -10,11 +10,11 @@ const Funnel = (props) => {
   const [showClosedCount, setShowClosedCount] = useState(false);
   const [showRejectedCount, setShowRejectedCount] = useState(false);
 
-  const lead = countProspectByStage(prospects, "lead");
-  const contacted = countProspectByStage(prospects, "contacted");
-  const diligence = countProspectByStage(prospects, "diligence");
-  const closed = countProspectByStage(prospects, "closed");
-  const rejected = countProspectByStage(prospects, "rejected");
+  const lead = countProspectsByStage(prospects, "lead");
+  const contacted = countProspectsByStage(prospects, "contacted");
+  const diligence = countProspectsByStage(prospects, "diligence");
+  const closed = countProspectsByStage(prospects, "closed");
+  const rejected = countProspectsByStage(prospects, "rejected");
 
   return (
     <> 
