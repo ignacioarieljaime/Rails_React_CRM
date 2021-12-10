@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "export SET NODE_OPTIONS=--openssl-legacy-provider && craco build"
+  command = "craco build"
   functions = "netlify/functions"
   publish = "build"
 
