@@ -12,9 +12,6 @@ const Login = (props) => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-
     await login({ email, password })
   }
 
