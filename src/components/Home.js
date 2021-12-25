@@ -29,18 +29,18 @@ const Home = (props) => {
   }
 
   return (
-    <div className="h-screen sm:flex px-6 py-3">
-      <div className="flex flex-col justify-center items-center sm:w-1/2 p-6 sm:pt-0 border-dashed sm:border-solid border-b-2 sm:border-b-0 sm:border-r-2 border-gray-400">
-        <Funnel />
-      </div>
-
-      <div className="sm:w-1/2">
-        <div className="flex items-center justify-end sm:ml-3 mt-6 sm:mt-0 mb-4 sm:mb-12 mr-3 sm:mr-28 p-3">
+    <div className="h-screen sm:flex px-6 py-3 sm:mt-8">
+      <div className="h-5/6 flex flex-col justify-center items-center sm:w-1/2 border-dashed sm:border-solid border-b-2 sm:border-b-0 sm:border-r-2 border-gray-400">
+        <div className="w-full mt-2 mb-5 sm:mb-12 sm:flex justify-center">
           {!showProspectForm && <Button onClick={toggleProspectForm} name="New Prospect" />}
           {showProspectForm && <CloseButton onClick={toggleProspectForm}  />}
         </div>
         {showProspectForm && <NewProspectForm toggleProspectForm={toggleProspectForm} />}
         <Prospects prospects={prospects} />
+      </div>
+
+      <div className="sm:h-5/6 flex flex-col justify-center items-center sm:w-1/2 p-6 sm:pt-0">
+        <Funnel />
       </div>
     </div>
   );

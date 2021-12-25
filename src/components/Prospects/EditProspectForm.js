@@ -40,7 +40,7 @@ const EditProspectForm = (props) => {
   };
 
   return (
-    <>
+    <div className="border border-gray-400 rounded-md p-3">
       <CloseButton onClick={props.toggleEditProspectForm} />
       <form onSubmit={handleSubmit} className="w-full mx-auto mb-4 max-w-lg">
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -160,15 +160,15 @@ const EditProspectForm = (props) => {
               </div>
             </div>
           </div>}
-          <div className="w-full sm:mt-5 md:w-1/3 px-3 mb-6 md:mb-0">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          <div className="w-full sm:mt-5 md:w-1/3 px-3 mb-0 md:mb-0">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
               Submit
             </button>
           </div>
         </div>
       </form>
       <DeleteButton buttonName="Delete Prospect" onClick={handleDeleteProspect} />
-    </>
+    </div>
   );
 };
 

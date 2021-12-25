@@ -25,7 +25,7 @@ const Companies = (props) => {
    
   return (
     <div className="h-screen flex flex-col justify-center items-center px-6">
-      <div className="w-full flex justify-end mr-4 sm:mr-96 mb-6 p-3">
+      <div className="w-full sm:w-8/12 mt-2 mb-5 sm:mb-12 sm:flex justify-center">
         {!showCompanyForm && <Button onClick={toggleCompanyForm} name="New Company" />}
         {showCompanyForm && <CloseButton onClick={toggleCompanyForm}/>}
       </div>
