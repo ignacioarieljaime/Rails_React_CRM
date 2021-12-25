@@ -10,8 +10,8 @@
 
 > This is the front end. Here is the link to the back end https://github.com/iamme24cl/rails-react-crm-backend
 
-> Live demo hosted on heroku [_here_](https://vc-labs-crm-sales-funnel.netlify.app/). 
-> Demo video describing the features of the application is hosted [_here_](https://www.loom.com/share/f7259cc7a8874dd3af64b6c57cbd8dec).
+> Live demo hosted [_here_](https://rails-react-crm.netlify.app/). 
+> Demo video describing the features of the application is hosted [_here_]().
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
