@@ -20,7 +20,7 @@ const Login = (props) => {
   }
 
   return (
-    <div style={{minHeight: "80vh"}} className="flex justify-center items-center">
+    <div style={{minHeight: "80vh"}} className="flex justify-center items-center sm:mb-16">
       <div className="container mx-auto w-4/5 sm:w-2/4 lg:w-1/4 ">
         <h3 className="text-center text-lg mb-4 font-semibold">Log In using the demo account below</h3>
 

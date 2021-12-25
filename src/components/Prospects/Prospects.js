@@ -15,11 +15,11 @@ const Prospects = (props) => {
   });
   
   return (
-    <div className="container prospects-wrapper mx-auto h-96 sm:h-3/4 w-11/12 sm:w-9/12 mb-12 sm:mt-0 border-black bg-gray-200 p-6 rounded-md shadow-lg overflow-x-hidden overflow-y-scroll">
+    <div className="container prospects-wrapper mx-auto mb-6 h-96 lg:h-3/4 w-full sm:w-11/12 sm:mt-0 border-black bg-gray-200 p-6 rounded-md shadow-lg overflow-x-hidden overflow-y-scroll">
       <div className="p-1 mb-3 border border-gray-300 rounded-md">
         <input 
           className="appearance-none  border-none w-full text-gray-700 mr-3 p-2 leading-tight focus:outline-none" 
-          placeholder="Search by firstname, lastname or stage"
+          placeholder="Search"
           value={searchString} 
           onChange={e => setSearchString(e.target.value)} 
         />

@@ -35,7 +35,7 @@ const Company = (props) => {
         {showProspects &&
           <ul className="ml-2">
             {company.prospects && company.prospects.map(prospect => {
-              return <li className="text-sm font-bold ml-3" key={prospect.id}>{`${capitalize(prospect.first_name)} ${capitalize(prospect.last_name)}`} <span className="text-sm text-blue-700 font-normal ml-8 cursor-pointer">{prospect.email}</span></li>
+              return <li className="text-sm font-bold ml-3" key={prospect.id}><span className="block sm:inline-block">{`${capitalize(prospect.first_name)} ${capitalize(prospect.last_name)}`}</span> <span className="text-sm text-blue-700 font-normal sm:ml-8 cursor-pointer">{prospect.email}</span></li>
             })}
           </ul>
         }

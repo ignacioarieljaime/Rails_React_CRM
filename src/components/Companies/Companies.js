@@ -25,14 +25,14 @@ const Companies = (props) => {
    
   return (
     <div className="h-screen flex flex-col justify-center items-center px-6">
-      <div className="w-full sm:w-8/12 mt-2 mb-5 sm:mb-12 sm:flex justify-center">
+      <div className="w-full lg:w-8/12 mt-2 lg:mt-0 mb-5 lg:mb-12 lg:flex justify-center">
         {!showCompanyForm && <Button onClick={toggleCompanyForm} name="New Company" />}
         {showCompanyForm && <CloseButton onClick={toggleCompanyForm}/>}
       </div>
       {showCompanyForm && <CompanyForm toggleCompanyForm={toggleCompanyForm}/>}
 
-      <div className="container prospects-wrapper mx-auto h-3/4 w-11/12 sm:w-6/12 border-black bg-gray-200 p-6 rounded-md shadow-lg overflow-x-hidden overflow-y-scroll">
-        <div className="p-1 mb-3 border border-gray-300 rounded-md">
+      <div className="container prospects-wrapper mx-auto h-3/4 w-full lg:w-6/12 border-black bg-gray-200 p-6 rounded-lg shadow-lg overflow-x-hidden overflow-y-scroll">
+        <div className="p-1 mb-3 border border-gray-300 rounded-lg">
           <input 
             className="appearance-none  border-none w-full text-gray-700 mr-3 p-2 leading-tight focus:outline-none" 
             placeholder="Search by Company name"
