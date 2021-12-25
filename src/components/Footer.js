@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="text-center lg:text-left text-sm bg-gray-100 text-gray-600">
-       <div className="text-center p-6 bg-gray-200">
+    <footer className="text-center lg:text-left bg-gray-900 text-sm text-white">
+       <div className="text-center p-6">
         <span>© 2021 Copyright </span>
-        <a className="text-gray-600 font-semibold" href="https://mdbootstrap.com/">Rails-React-CRM</a>
+        <a className="text-gray-400 font-semibold" href="https://mdbootstrap.com/">Rails-React-CRM</a>
       </div>
     </footer>
   )
