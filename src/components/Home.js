@@ -30,7 +30,7 @@ const Home = (props) => {
 
   return (
     <div className="h-screen lg:flex items-start lg:mt-0 px-6 py-3 lg:pt-6 mb-64 lg:-mb-16">
-      <div className="flex flex-col justify-center items-center lg:w-1/2 lg:h-3/4 border-dashed lg:border-none border-b-2 border-gray-400">
+      <div className="flex flex-col justify-center items-center lg:w-1/2 lg:mt-10 border-dashed lg:border-none border-b-2 border-gray-400">
         <div className="w-full lg:mt-0 mb-6 lg:mb-12 sm:flex justify-center">
           {!showProspectForm && <Button onClick={toggleProspectForm} name="New Prospect" />}
           {showProspectForm && <CloseButton onClick={toggleProspectForm}  />}
