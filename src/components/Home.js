@@ -39,7 +39,7 @@ const Home = (props) => {
         <Prospects prospects={prospects} />
       </div>
 
-      <div className="lg:w-1/2 mt-6 pt-6 lg:pt-0 lg:mt-20">
+      <div className="lg:w-1/2 mt-6 pb-6 lg:pt-0 lg:mt-20">
         <Funnel />
       </div>
     </div>
