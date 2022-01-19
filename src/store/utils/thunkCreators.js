@@ -102,7 +102,6 @@ export const fetchCompanies = () => async (dispatch) => {
 export const postCompany = (body) => async (dispatch) => {
   try {
     const { data } = await axios.post(`${BASE}/companies`, body);
-    console.log(data);
     dispatch(addCompany(data));
   } catch (error) {
     console.error(error);
