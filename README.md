@@ -1,6 +1,6 @@
 # crm-sales-funnel
-> This application is a CRM sales funnel.
-> ## General Information
+This application is a CRM sales funnel.
+## General Information
 - Create, update and delete Prospects.
 - Create, update and delete Prospects.
 - Move prospects between different stages.
@@ -8,10 +8,9 @@
 - User is able to filter prospects by stage.
 - User is able to filter companies by name.
 
-> This is the front end. Here is the link to the back end https://github.com/iamme24cl/rails-react-crm-backend
+#### This is the front end. Here is the link to the back end https://github.com/iamme24cl/rails-react-crm-backend
 
-> Live demo hosted [_here_](https://rails-react-crm.netlify.app/). 
-> Demo video describing the features of the application is hosted [_here_](https://www.loom.com/share/25748eab68cd44a59f5422ab1fc85150?sharedAppSource=personal_library).
+#### Live demo hosted [HERE](https://rails-react-crm.netlify.app/) | Demo video describing the features of the application is hosted [HERE](https://www.loom.com/share/25748eab68cd44a59f5422ab1fc85150?sharedAppSource=personal_library).
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
@@ -35,6 +34,7 @@
 * Run `rails s` to run the server
 * Clone this front-end folder and run `npm install && npm start` to install all dependecies listed in the package.json file and start the server and run the application in the browser.
 
+***
 
 ## Contact
 Created by [@iamme24cl](https://github.com/iamme24cl) 
