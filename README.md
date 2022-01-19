@@ -1,5 +1,5 @@
-# crm-sales-funnel
-This application is a CRM sales funnel.
+# Customer Relationship Manager
+This is a Customer Relationship Management application.
 ## General Information
 - Create, update and delete Prospects.
 - Create, update and delete Prospects.
