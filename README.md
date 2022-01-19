@@ -35,6 +35,10 @@ This is a Customer Relationship Management application.
 * Clone this front-end folder and run `npm install && npm start` to install all dependecies listed in the package.json file and start the server and run the application in the browser.
 
 ***
+![]()
+![]()
+![]()
+![]()
 
 ## Contact
 Created by [@iamme24cl](https://github.com/iamme24cl) 
