@@ -35,8 +35,8 @@ This is a Customer Relationship Management application.
 * Clone this front-end folder and run `npm install && npm start` to install all dependecies listed in the package.json file and start the server and run the application in the browser.
 
 ***
-![]()
-![]()
+![Login Page](/images/crm-login-page.png "login page")
+![Home Page](/images/crm-home-page.png "hoem-page")
 ![]()
 ![]()
 
