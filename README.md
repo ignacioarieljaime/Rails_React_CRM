@@ -10,7 +10,7 @@ This is a Customer Relationship Management application.
 
 #### This is the front end. Here is the link to the back end https://github.com/iamme24cl/rails-react-crm-backend
 
-#### Live demo hosted [HERE](https://rails-react-crm.netlify.app/) | Demo video describing the features of the application is hosted [HERE](https://www.loom.com/share/25748eab68cd44a59f5422ab1fc85150?sharedAppSource=personal_library).
+#### Live demo [rails-react-crm.netlify.app](https://rails-react-crm.netlify.app/) | Demo video describing the features of the application is hosted [HERE](https://www.loom.com/share/25748eab68cd44a59f5422ab1fc85150?sharedAppSource=personal_library).
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
